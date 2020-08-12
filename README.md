@@ -277,6 +277,7 @@ usage: cheribuild.py [-h] [--config-file FILE] [--help-all] [--pretend] [--build
                      [--cheribsd-mfs-root-kernel/no-build-fpga-kernels] [--cheribsd-sysroot/remote-sdk-path PATH]
                      [--qemu/gui] [--qemu/targets QEMU/TARGETS] [--qemu/unaligned] [--qemu/statistics]
                      [--freertos/demo DEMO] [--freertos/bsp BSP] [--freertos/prog PROG]
+                     [--run-freertos/demo DEMO] [--run-freertos/bsp BSP] [--run-freertos/prog PROG]
                      [--cherios-qemu/gui] [--cherios-qemu/targets CHERIOS_QEMU/TARGETS] [--cherios-qemu/unaligned]
                      [--cherios-qemu/statistics] [--disk-image-minimal/extra-files DIR]
                      [--disk-image-minimal/hostname HOSTNAME] [--disk-image-minimal/remote-path PATH]
@@ -527,11 +528,11 @@ Options for target 'qemu':
   --qemu/statistics     Collect statistics on out-of-bounds capability creation. (default: 'False')
 
 Options for target 'FreeRTOS':
-  --freertos/demo Demo  Build a specific FreeRTOS Demo. Currently, available Demos are RISC-V_Galois_P1
+  --(run-)freertos/demo Demo  Build/run a specific FreeRTOS Demo. Currently, available Demos are RISC-V_Galois_P1
                         and RISC-V-Generic (default: 'RISC-V-Generic').
-  --freertos/prog PROG  Build a specific program part of the Demo. For example, this could be main_blinky,
+  --(run-)freertos/prog PROG  Build/run a specific program part of the Demo. For example, this could be main_blinky,
                         main_test_full, etc.
-  --freertos/bsp  BSP   This is only valid for the paramterized RISC-V-Generic. The BSP option chooses
+  --(run-)freertos/bsp  BSP   This is only valid for the paramterized RISC-V-Generic. The BSP option chooses
                         platform, RISC-V arch and RISC-V abi in the $platform-$arch-$abi format. See
                         RISC-V-Generic/README for more details.
 Options for target 'cherios-qemu':
